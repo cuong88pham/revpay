@@ -4,14 +4,11 @@ import {
   View,
   Text,
   TouchableOpacity,
-  Image,
   ScrollView,
 } from 'react-native';
 
 import { colors, fonts } from '../../styles';
 import {} from '../../components';
-
-const calendarIcon = require('../../../assets/images/pages/calendar.png');
 // const chatIcon = require('../../../assets/images/pages/chat.png');
 // const galleryIcon = require('../../../assets/images/pages/gallery.png');
 // const profileIcon = require('../../../assets/images/pages/profile.png');
@@ -27,7 +24,7 @@ class SettingItem extends Component {
   }
 }
 
-export default function PagesScreen(props) {
+export default function SettingView(props) {
   return (
     <ScrollView
       style={styles.container}

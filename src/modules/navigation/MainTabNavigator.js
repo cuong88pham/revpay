@@ -48,13 +48,8 @@ const styles = StyleSheet.create({
   },
 });
 
-export default createBottomTabNavigator(
-  {
-    Home: {
-      screen: HomeScreen,
-      navigationOptions: {
-        header: null,
-      },
-    }
+export default createBottomTabNavigator({
+  Home: {
+    screen: HomeScreen,
   },
-);
+});
