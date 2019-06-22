@@ -48,14 +48,14 @@ const stackNavigator = createStackNavigator(
         </TouchableOpacity>
       ),
       headerRight: (
-          <Image
-            source={require('../../../assets/images/icons/icon_setting.png')}
-            resizeMode="contain"
-            style={{
-              height: 16,
-              paddingRight: 30,
-            }}
-          />
+        <Image
+          source={require('../../../assets/images/icons/icon_setting.png')}
+          resizeMode="contain"
+          style={{
+            height: 16,
+            paddingRight: 30,
+          }}
+        />
       ),
     }),
   },

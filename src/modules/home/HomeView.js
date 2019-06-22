@@ -1,15 +1,13 @@
-import React from 'react';
+import React, { Component }  from 'react';
 import {
   StyleSheet,
   View,
-  TouchableOpacity,
-  ImageBackground,
-  ScrollView,
-  Card
+  ScrollView
 } from 'react-native';
 
 import { fonts, colors } from '../../styles';
 import { Text } from '../../components/StyledText';
+import { CardItem } from '../../components';
 
 export default function HomeScreen({ isExtended, setIsExtended }) {
   // const rnsUrl = 'https://reactnativestarter.com';
@@ -27,44 +25,56 @@ export default function HomeScreen({ isExtended, setIsExtended }) {
     <ScrollView 
       contentContainerStyle={{ paddingBottom: 20 }}
     >
-      <View style={styles.container}>
-        <View style={styles.section}>
-        </View>
-        <View style={styles.section}>
+      <View style={styles.componentsSection}>
+        <Text style={styles.sectionTitle}>Wallets</Text>
+        <CardItem
+          icon={require('../../../assets/images/bitcoin.png')}
+          title="Bitcoin"
+          subTitle="1/1"
+          value="0"
+          arrowRight={require('../../../assets/images/icons/right-arrow.png')}
+          valueMoney="$100.10 USD"
+        />
+        <CardItem
+          icon={require('../../../assets/images/bitcoin.png')}
+          title="Bitcoin Cash"
+          subTitle="2/3"
+          value="0"
+          arrowRight={require('../../../assets/images/icons/right-arrow.png')}
+          valueMoney="$100.10 USD"
+        />
+      </View>
+      <View style={styles.componentsSection}>
+        <Text style={styles.sectionTitle}>Card</Text>
+        <CardItem
+          icon={require('../../../assets/images/bitcoin.png')}
+          logo={require('../../../assets/images/logo-bitpay.png')}
+          title="Bitcoin"
+          subTitle="1/1"
+          value="0"
+          valueMoney="$100.10 USD"
+        />
+        <CardItem
+          icon={require('../../../assets/images/bitcoin.png')}
           
-        </View>
-        <View style={styles.section}>
-          <Text size={20} >
-            section 1
-          </Text>
-        </View>
+          title="Bitcoin Cash"
+          subTitle="2/3"
+          value="0"
+          valueMoney="$100.10 USD"
+        />
       </View>
     </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
+  body: {
+    backgroundColor: '#ccc',
+  },
   container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'space-around',
-  },
-  componentsSection: {
-    backgroundColor: colors.white,
-    padding: 15,
-    marginBottom: 20,
-    borderRadius: 5,
-  },
-  componentSectionHeader: {
-    fontFamily: fonts.primaryRegular,
-    color: '#686868',
-    fontSize: 20,
-    marginBottom: 20,
-  },
-
-  bgImage: {
-    flex: 1,
-    marginHorizontal: -20,
   },
   section: {
     flex: 1,
@@ -72,34 +82,21 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  sectionLarge: {
-    flex: 2,
-    justifyContent: 'space-around',
-  },
-  sectionHeader: {
-    marginBottom: 8,
-  },
-  priceContainer: {
-    alignItems: 'center',
-  },
-  description: {
+  componentsSection: {
+    backgroundColor: colors.white,
     padding: 15,
-    lineHeight: 25,
+    marginBottom: 20,
+    borderRadius: 5,
   },
-  titleDescription: {
-    color: '#19e7f7',
-    textAlign: 'center',
+  sectionTitle: {
     fontFamily: fonts.primaryRegular,
-    fontSize: 15,
+    color: '#000',
+    fontWeight: 'bold',
+    fontSize: 20,
+    marginBottom: 20,
   },
-  title: {
-    marginTop: 30,
-  },
-  price: {
-    marginBottom: 5,
-  },
-  priceLink: {
-    borderBottomWidth: 1,
-    borderBottomColor: colors.primary,
+  itemImage: {
+    flex: 1,
+    height: 30,
   },
 });
