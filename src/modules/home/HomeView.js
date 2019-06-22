@@ -23,7 +23,7 @@ export default function HomeScreen({ isExtended, setIsExtended }) {
 
   return (
     <ScrollView 
-      contentContainerStyle={{ paddingBottom: 20, backgroundColor: '#f5fcff', }}
+      contentContainerStyle={{ paddingBottom: 20, backgroundColor: '#f0f0f0', }}
     >
       <View style={styles.componentsSection}>
         <Text style={styles.sectionTitle}>Wallets</Text>

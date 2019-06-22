@@ -54,7 +54,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#f5f5f5',
     borderRadius: 6,
     marginBottom: 18,
-    overflow: "hidden"
+    overflow: "hidden",
+    
   },
   CardItem: {
     flexDirection: 'row',

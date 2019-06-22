@@ -48,17 +48,17 @@ const styles = StyleSheet.create({
   componentsSection: {
     backgroundColor: colors.white,
     marginBottom: 20,
-    borderRadius: 5,
+    borderRadius: 10,
+    overflow: "hidden",
   },
   cardContainer: {
     flexDirection: 'row',
     paddingVertical: 20,
-    padding: 25,
+    padding: 25
   },
   image: {
     width: '100%',
   },
-
   icon: {
     height: 50,
     width: 50,
@@ -70,11 +70,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-
   title: {
     fontFamily: fonts.primaryBold,
     fontSize: 20,
-    color: '#5F5F5F',
+    color: '#272937',
     marginBottom: 5,
   },
   subtitle: {
@@ -91,14 +90,17 @@ const styles = StyleSheet.create({
     marginRight: -15,
   },
   button: {
+    backgroundColor: '#d8d8d8',
     flex: 1,
     padding: 15,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F8F8F8',
+    fontSize: 16,
   },
   textButton: {
     fontFamily: fonts.primaryRegular,
+    fontSize: 18,
+    color: "#272937"
   },
 });
 
