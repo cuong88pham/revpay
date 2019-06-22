@@ -1,105 +1,246 @@
-/* eslint-disable class-methods-use-this */
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import { Agenda } from 'react-native-calendars';
+import {
+  StyleSheet,
+  View,
+  Text,
+  TouchableOpacity,
+  // Image,
+  ScrollView,
+} from 'react-native';
 
 import { colors, fonts } from '../../styles';
+import {} from '../../components';
 
-class CalendarScreen extends React.Component {
-  rowHasChanged(r1, r2) {
-    return r1.name !== r2.name;
-  }
+// const calendarIcon = require('../../../assets/images/pages/calendar.png');
+// const chatIcon = require('../../../assets/images/pages/chat.png');
+// const galleryIcon = require('../../../assets/images/pages/gallery.png');
+// const profileIcon = require('../../../assets/images/pages/profile.png');
 
-  renderEmptyDate() {
-    return (
-      <View style={styles.emptyDate}>
-        <Text>This is empty date!</Text>
-      </View>
-    );
-  }
-
-  renderItem(item) {
-    const labels =
-      item.labels &&
-      item.labels.map(label => (
-        <View
-          key={`label-${label}`}
-          style={{
-            padding: 5,
-            backgroundColor:
-              label === 'Urgent' ? colors.primary : colors.secondary,
-            borderRadius: 3,
-          }}
+export default function PagesScreen(props) {
+  return (
+    <ScrollView
+      style={styles.container}
+      contentContainerStyle={{ paddingBottom: 20 }}
+    >
+      <View style={styles.componentsSection}>
+        <Text style={styles.componentSectionHeader}>General</Text>
+        <TouchableOpacity
+          onPress={() => props.navigation.navigate({ routeName: 'Gallery' })}
+          style={styles.item}
         >
-          <Text style={{ color: 'white' }}>{label}</Text>
-        </View>
-      ));
-
-    return (
-      <View style={styles.item}>
-        <View>
-          <Text
-            style={{
-              color: '#48506B',
-              fontFamily: fonts.primaryRegular,
-              marginBottom: 10,
-            }}
-          >
-            {item.name}
-          </Text>
-          <Text style={{ color: '#9B9B9B', fontFamily: fonts.primaryRegular }}>
-            {item.time}
-          </Text>
-        </View>
-
-        <View styleName="horizontal h-start">{labels}</View>
+          {/* <Image
+            resizeMode="contain"
+            source={galleryIcon}
+            style={styles.itemImage}
+          /> */}
+          <Text style={styles.itemText}>Address book</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => props.navigation.navigate({ routeName: 'Gallery' })}
+          style={styles.item}
+        >
+          {/* <Image
+            resizeMode="contain"
+            source={galleryIcon}
+            style={styles.itemImage}
+          /> */}
+          <Text style={styles.itemText}>Help & support</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => props.navigation.navigate({ routeName: 'Gallery' })}
+          style={styles.item}
+        >
+          {/* <Image
+            resizeMode="contain"
+            source={galleryIcon}
+            style={styles.itemImage}
+          /> */}
+          <Text style={styles.itemText}>Share revPay</Text>
+        </TouchableOpacity>
       </View>
-    );
-  }
-
-  render() {
-    const { items, loadItems } = this.props;
-    return (
-      <Agenda
-        items={items}
-        loadItemsForMonth={loadItems}
-        renderItem={this.renderItem}
-        renderEmptyDate={this.renderEmptyDate}
-        rowHasChanged={this.rowHasChanged}
-        theme={{
-          dotColor: colors.primaryLight,
-          selectedDayBackgroundColor: colors.primaryLight,
-          agendaDayTextColor: colors.primaryLight,
-          agendaDayNumColor: colors.primaryLight,
-          agendaTodayColor: '#4F44B6',
-          backgroundColor: '#F1F1F8',
-        }}
-      />
-    );
-  }
+      <View style={styles.componentsSection}>
+        <Text style={styles.componentSectionHeader}>Preferences</Text>
+        <TouchableOpacity
+          onPress={() => props.navigation.navigate({ routeName: 'Gallery' })}
+          style={styles.item}
+        >
+          {/* <Image
+            resizeMode="contain"
+            source={galleryIcon}
+            style={styles.itemImage}
+          /> */}
+          <Text style={styles.itemText}>Notification</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => props.navigation.navigate({ routeName: 'Gallery' })}
+          style={styles.item}
+        >
+          {/* <Image
+            resizeMode="contain"
+            source={galleryIcon}
+            style={styles.itemImage}
+          /> */}
+          <Text style={styles.itemText}>Language</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => props.navigation.navigate({ routeName: 'Gallery' })}
+          style={styles.item}
+        >
+          {/* <Image
+            resizeMode="contain"
+            source={galleryIcon}
+            style={styles.itemImage}
+          /> */}
+          <Text style={styles.itemText}>Alternative currentcy</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => props.navigation.navigate({ routeName: 'Gallery' })}
+          style={styles.item}
+        >
+          {/* <Image
+            resizeMode="contain"
+            source={galleryIcon}
+            style={styles.itemImage}
+          /> */}
+          <Text style={styles.itemText}>Bitcoin netwok fee policy</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => props.navigation.navigate({ routeName: 'Gallery' })}
+          style={styles.item}
+        >
+          {/* <Image
+            resizeMode="contain"
+            source={galleryIcon}
+            style={styles.itemImage}
+          /> */}
+          <Text style={styles.itemText}>Look</Text>
+        </TouchableOpacity>
+      </View>
+      <View style={styles.componentsSection}>
+        <Text style={styles.componentSectionHeader}>Integrations</Text>
+        <TouchableOpacity
+          onPress={() => props.navigation.navigate({ routeName: 'Gallery' })}
+          style={styles.item}
+        >
+          {/* <Image
+            resizeMode="contain"
+            source={galleryIcon}
+            style={styles.itemImage}
+          /> */}
+          <Text style={styles.itemText}>RevPay Visa® Card</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => props.navigation.navigate({ routeName: 'Gallery' })}
+          style={styles.item}
+        >
+          {/* <Image
+            resizeMode="contain"
+            source={galleryIcon}
+            style={styles.itemImage}
+          /> */}
+          <Text style={styles.itemText}>Coinbase</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => props.navigation.navigate({ routeName: 'Gallery' })}
+          style={styles.item}
+        >
+          {/* <Image
+            resizeMode="contain"
+            source={galleryIcon}
+            style={styles.itemImage}
+          /> */}
+          <Text style={styles.itemText}>Gift Cards</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => props.navigation.navigate({ routeName: 'Gallery' })}
+          style={styles.item}
+        >
+          {/* <Image
+            resizeMode="contain"
+            source={galleryIcon}
+            style={styles.itemImage}
+          /> */}
+          <Text style={styles.itemText}>Shapeshift</Text>
+        </TouchableOpacity>
+      </View>
+      <View style={styles.componentsSection}>
+        <Text style={styles.componentSectionHeader}>More</Text>
+        <TouchableOpacity
+          onPress={() => props.navigation.navigate({ routeName: 'Gallery' })}
+          style={styles.item}
+        >
+          {/* <Image
+            resizeMode="contain"
+            source={galleryIcon}
+            style={styles.itemImage}
+          /> */}
+          <Text style={styles.itemText}>Advanced</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => props.navigation.navigate({ routeName: 'Gallery' })}
+          style={styles.item}
+        >
+          {/* <Image
+            resizeMode="contain"
+            source={galleryIcon}
+            style={styles.itemImage}
+          /> */}
+          <Text style={styles.itemText}>About revPay</Text>
+        </TouchableOpacity>
+      </View>
+    </ScrollView>
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.whiteTwo,
+    backgroundColor: colors.bluish,
+    paddingHorizontal: 15,
+    paddingTop: 20,
+  },
+  componentsSection: {
+    backgroundColor: colors.white,
+    padding: 15,
+    marginBottom: 20,
+    borderRadius: 5,
+  },
+  componentSectionHeader: {
+    fontFamily: fonts.primaryRegular,
+    color: '#686868',
+    fontSize: 20,
+    marginBottom: 20,
+  },
+  demoButtonsContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
+  },
+  demoIconsContainer: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    marginBottom: 20,
+  },
+  demoButton: {
+    marginTop: 8,
+    marginBottom: 8,
+  },
+  demoItem: {
+    marginVertical: 15,
   },
   item: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    backgroundColor: 'white',
-    borderRadius: 5,
-    padding: 10,
-    marginRight: 10,
-    marginTop: 10,
-  },
-  emptyDate: {
-    height: 15,
     flex: 1,
-    paddingTop: 30,
+    height: 50,
+    paddingVertical: 10,
+    borderBottomColor: '#F8F8F8',
+    borderBottomWidth: 1,
+    alignItems: 'flex-start',
+    justifyContent: 'space-around',
+    marginHorizontal: 5,
   },
 });
-
-export default CalendarScreen;
