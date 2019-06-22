@@ -1,4 +1,4 @@
-import React, { Component }  from 'react';
+import React  from 'react';
 import {
   StyleSheet,
   View,
@@ -7,7 +7,7 @@ import {
 
 import { fonts, colors } from '../../styles';
 import { Text } from '../../components/StyledText';
-import { CardItem } from '../../components';
+import { CardItem, CardInformation } from '../../components';
 
 export default function HomeScreen({ isExtended, setIsExtended }) {
   // const rnsUrl = 'https://reactnativestarter.com';
@@ -47,7 +47,7 @@ export default function HomeScreen({ isExtended, setIsExtended }) {
         />
       </View>
       <View style={styles.componentsSection}>
-        <Text style={styles.sectionTitle}>Card</Text>
+        <Text style={styles.sectionTitle}>Cards</Text>
         <CardItem
           hasBackgroundGradient
           icon={require('../../../assets/images/logo-bitpay.png')}
@@ -60,7 +60,7 @@ export default function HomeScreen({ isExtended, setIsExtended }) {
         />
         <CardItem
           hasBackgroundGradient
-          icon={require('../../../assets/images/bitcoin.png')}
+          icon={require('../../../assets/images/logo-bitpay.png')}
           isLogo
           title=""
           subTitle=""
@@ -69,6 +69,26 @@ export default function HomeScreen({ isExtended, setIsExtended }) {
           valueMoney="$100.10 USD"
         />
       </View>
+      <View style={styles.componentsSection}>
+        <Text style={styles.sectionTitle}>Cards</Text>
+        <CardInformation
+          image={require('../../../assets/images/logo-bitpay.png')}
+          icon=''
+          onPress=''
+          title='Get a RevPay Card'
+          description='Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+          onPressTitle='Get Started'
+        />
+        <CardInformation
+          image=''
+          icon={require('../../../assets/images/bitcoin.png')}
+          onPress=''
+          title='Buy Gift Card'
+          description='Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+          onPressTitle='Shop now'
+        />
+      </View>
+
     </ScrollView>
   );
 }
