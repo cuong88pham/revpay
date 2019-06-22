@@ -23,43 +23,49 @@ export default function HomeScreen({ isExtended, setIsExtended }) {
 
   return (
     <ScrollView 
-      contentContainerStyle={{ paddingBottom: 20 }}
+      contentContainerStyle={{ paddingBottom: 20, backgroundColor: '#f5fcff', }}
     >
       <View style={styles.componentsSection}>
         <Text style={styles.sectionTitle}>Wallets</Text>
         <CardItem
           icon={require('../../../assets/images/bitcoin.png')}
+          isLogo={false}
           title="Bitcoin"
           subTitle="1/1"
           value="0"
-          arrowRight={require('../../../assets/images/icons/right-arrow.png')}
+          hasTouch
           valueMoney="$100.10 USD"
         />
         <CardItem
           icon={require('../../../assets/images/bitcoin.png')}
+          isLogo={false}
           title="Bitcoin Cash"
           subTitle="2/3"
           value="0"
-          arrowRight={require('../../../assets/images/icons/right-arrow.png')}
+          hasTouch
           valueMoney="$100.10 USD"
         />
       </View>
       <View style={styles.componentsSection}>
         <Text style={styles.sectionTitle}>Card</Text>
         <CardItem
-          icon={require('../../../assets/images/bitcoin.png')}
-          logo={require('../../../assets/images/logo-bitpay.png')}
-          title="Bitcoin"
-          subTitle="1/1"
+          hasBackgroundGradient
+          icon={require('../../../assets/images/logo-bitpay.png')}
+          isLogo
+          title=""
+          subTitle=""
           value="0"
+          hasTouch={false}
           valueMoney="$100.10 USD"
         />
         <CardItem
+          hasBackgroundGradient
           icon={require('../../../assets/images/bitcoin.png')}
-          
-          title="Bitcoin Cash"
-          subTitle="2/3"
+          isLogo
+          title=""
+          subTitle=""
           value="0"
+          hasTouch={false}
           valueMoney="$100.10 USD"
         />
       </View>
@@ -68,9 +74,6 @@ export default function HomeScreen({ isExtended, setIsExtended }) {
 }
 
 const styles = StyleSheet.create({
-  body: {
-    backgroundColor: '#ccc',
-  },
   container: {
     flex: 1,
     alignItems: 'center',
@@ -83,7 +86,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   componentsSection: {
-    backgroundColor: colors.white,
     padding: 15,
     marginBottom: 20,
     borderRadius: 5,
