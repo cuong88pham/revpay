@@ -34,19 +34,7 @@ export default class GridsScreen extends React.Component {
             <Image style={styles.itemOneImage} source={{ uri: item.image }} />
           </View>
           <View style={styles.itemOneContent}>
-            <Text style={styles.itemOneTitle} numberOfLines={1}>
-              {item.title}
-            </Text>
-            <Text
-              style={styles.itemOneSubTitle}
-              styleName="collapsible"
-              numberOfLines={3}
-            >
-              {item.subtitle}
-            </Text>
-            <Text style={styles.itemOnePrice} numberOfLines={1}>
-              {item.price}
-            </Text>
+            
           </View>
         </View>
       </TouchableOpacity>

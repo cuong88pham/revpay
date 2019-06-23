@@ -21,9 +21,14 @@ DerivedData
 *.ipa
 *.xcuserstate
 project.xcworkspace
-
+## Xcode Patch
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcworkspace/contents.xcworkspacedata
+/*.gcno
 # Android/IntelliJ
-#
+
 build/
 .idea
 .gradle
@@ -56,3 +61,6 @@ buck-out/
 *.jsbundle
 
 jest_coverage
+ios/ReactNativeStarter.xcodeproj/project.pbxproj
+ios/ReactNativeStarter.xcodeproj/project.pbxproj
+ios/ReactNativeStarter.xcodeproj/project.pbxproj
