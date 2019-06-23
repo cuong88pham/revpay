@@ -28,7 +28,7 @@ project.xcworkspace
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
 # Android/IntelliJ
-#
+
 build/
 .idea
 .gradle
