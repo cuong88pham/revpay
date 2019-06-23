@@ -59,7 +59,7 @@ export default class HomeScreen extends React.Component{
             <Text style={styles.sectionTitle}>Cards</Text>
             <CardItem
               hasBackgroundGradient
-              icon={require('../../../assets/images/logo-bitpay.png')}
+              icon={require('../../../assets/images/logo-RevPay.png')}
               isLogo
               title=""
               subTitle=""
@@ -69,7 +69,7 @@ export default class HomeScreen extends React.Component{
             />
             <CardItem
               hasBackgroundGradient
-              icon={require('../../../assets/images/logo-bitpay.png')}
+              icon={require('../../../assets/images/logo-RevPay.png')}
               isLogo
               title=""
               subTitle=""
@@ -81,7 +81,7 @@ export default class HomeScreen extends React.Component{
           <View style={styles.componentsSection}>
             <Text style={styles.sectionTitle}>Cards</Text>
             <CardInformation
-              image={require('../../../assets/images/logo-bitpay.png')}
+              image={require('../../../assets/images/card-demo.png')}
               icon=''
               onPress={() => this._openCard()}
               title='Get a RevPay Card'
