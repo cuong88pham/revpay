@@ -57,7 +57,7 @@ export default class HomeScreen extends React.Component {
         <ScrollView
           contentContainerStyle={{
             paddingBottom: 20,
-            backgroundColor: '#f5f5f5',
+            backgroundColor: '#f8f7fc',
           }}
         >
           <View style={styles.componentsSection}>
@@ -164,7 +164,6 @@ export default class HomeScreen extends React.Component {
         <Button
           style={styles.scanButton}
           icon={require('../../../assets/images/icons/qr-code.png')}
-          caption="Scan"
           onPress={() => console.log('This is scan button!!')}
         />
       </React.Fragment>
@@ -201,11 +200,10 @@ const styles = StyleSheet.create({
     height: 30,
   },
   scanButton: {
-    backgroundColor: '#272937',
     alignSelf: 'center',
     position: 'absolute',
     bottom: 25,
-    width: 120,
+    width: 100,
     fontSize: 16,
     borderRadius: 10,
   },
