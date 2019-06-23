@@ -7,6 +7,7 @@ import TextInput from './TextInput';
 import SegmentedControl from './SegmentedControl';
 import CardItem from './CardItem';
 import CardInformation from './CardInformation';
+import CardTransaction from './CardTransaction';
 
 export {
   // ## Generator Components Exports
@@ -18,4 +19,5 @@ export {
   SegmentedControl,
   CardItem,
   CardInformation,
+  CardTransaction
 };
