@@ -5,6 +5,7 @@ import Dropdown from './Dropdown';
 import GridRow from './GridRow';
 import TextInput from './TextInput';
 import SegmentedControl from './SegmentedControl';
+import CardTransaction from './CardTransaction';
 
 export {
   // ## Generator Components Exports
@@ -14,4 +15,5 @@ export {
   GridRow,
   TextInput,
   SegmentedControl,
+  CardTransaction,
 };
