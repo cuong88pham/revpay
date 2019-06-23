@@ -7,12 +7,17 @@ import AvailableInFullVersion from '../availableInFullVersion/AvailableInFullVer
 
 import { colors, fonts } from '../../styles';
 
-const headerBackground = require('../../../assets/images/topBarBg.png');
-
 const stackNavigator = createStackNavigator(
   {
     Main: {
       screen: HomeScreen,
+        navigationOptions: () => ({
+        title: 'RevPay',
+        
+      }),
+    },
+    CardDetail: {
+      screen: AvailableInFullVersion,
         navigationOptions: () => ({
         title: 'RevPay',
         

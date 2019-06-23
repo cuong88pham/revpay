@@ -6,10 +6,7 @@ import { createBottomTabNavigator } from 'react-navigation';
 import { colors, fonts } from '../../styles';
 
 import HomeScreen from '../home/HomeViewContainer';
-
-const iconHome = require('../../../assets/images/tabbar/home.png');
-
-const hederBackground = require('../../../assets/images/topBarBg.png');
+import AvailableInFullVersion from '../availableInFullVersion/AvailableInFullVersionViewContainer';
 
 const styles = StyleSheet.create({
   tabBarItemContainer: {
@@ -52,6 +49,12 @@ export default createBottomTabNavigator(
   {
     Home: {
       screen: HomeScreen,
+      navigationOptions: {
+        header: null,
+      },
+    },
+    CardDetail: {
+      screen: AvailableInFullVersion,
       navigationOptions: {
         header: null,
       },
