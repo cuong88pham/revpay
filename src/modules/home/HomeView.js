@@ -10,6 +10,13 @@ import { Text } from '../../components/StyledText';
 import { CardItem, CardInformation, Button } from '../../components';
 
 export default class HomeScreen extends React.Component{
+  _openCardDetail = data => {
+    this.props.navigation.navigate({
+      routeName: 'CardDetail',
+      params: { ...data },
+    });
+  };
+
   _openCard = card => {
     this.props.navigation.navigate({
       routeName: 'CardTransaction',
@@ -41,6 +48,7 @@ export default class HomeScreen extends React.Component{
               value="0"
               hasTouch
               valueMoney="$100.10 USD"
+              onPress={() => this._openCardDetail()}
             />
             <CardItem
               icon={require('../../../assets/images/bitcoin.png')}
@@ -50,6 +58,7 @@ export default class HomeScreen extends React.Component{
               value="0"
               hasTouch
               valueMoney="$100.10 USD"
+              onPress={() => this._openCardDetail()}
             />
           </View>
           <View style={styles.componentsSection}>
@@ -77,7 +86,6 @@ export default class HomeScreen extends React.Component{
           </View>
           <View style={styles.componentsSection}>
             <Text style={styles.sectionTitle}>Cards</Text>
-            
             <CardInformation
               image={require('../../../assets/images/card-demo.png')}
               icon=''

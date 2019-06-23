@@ -6,6 +6,8 @@ import HomeScreen from '../home/HomeViewContainer';
 import SettingScreen from '../setting/SettingViewContainer';
 import WalletScreen from '../wallet/walletManageViewContainer';
 import CardTransactionScreen from '../cardTransaction/CardTransactionView';
+import CardDetailScreen from '../cardDetail/CardDetailView';
+
 import { colors, fonts } from '../../styles';
 
 const stackNavigator = createStackNavigator(
@@ -66,6 +68,12 @@ const stackNavigator = createStackNavigator(
         title: 'RevPay',
       },
     },
+    CardDetail: {
+      screen: CardDetailScreen,
+      navigationOptions: {
+        title: 'RevPay',
+      },
+    }
   },
   {
     defaultNavigationOptions: () => ({
