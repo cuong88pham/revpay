@@ -5,7 +5,7 @@ import { createAppContainer, createStackNavigator } from 'react-navigation';
 import HomeScreen from '../home/HomeViewContainer';
 import SettingScreen from '../setting/SettingViewContainer';
 import WalletScreen from '../wallet/walletManageViewContainer';
-
+import AvailableInFullVersion from '../availableInFullVersion/AvailableInFullVersionViewContainer';
 import { colors, fonts } from '../../styles';
 
 const stackNavigator = createStackNavigator(
@@ -58,6 +58,12 @@ const stackNavigator = createStackNavigator(
       screen: WalletScreen,
       navigationOptions: {
         title: 'Wallet',
+      },
+    },
+    CardDetail: {
+      screen: AvailableInFullVersion,
+      navigationOptions: {
+        title: 'RevPay',
       },
     },
   },
