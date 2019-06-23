@@ -1,16 +1,9 @@
 /* eslint-disable react/sort-comp */
 /* eslint-disable no-param-reassign */
-import React from 'react';
-import {
-  StyleSheet,
-  View,
-  Text,
-  ScrollView,
-  Image,
-  TouchableOpacity,
-} from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, View, Text, ScrollView } from 'react-native';
 
-class HomeView extends React.Component {
+class HomeView extends Component {
   render() {
     return (
       <ScrollView contentContainerStyle={{ paddingBottom: 20 }}>

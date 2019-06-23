@@ -4,11 +4,9 @@ import { createAppContainer, createStackNavigator } from 'react-navigation';
 
 import HomeScreen from '../home/HomeViewContainer';
 import SettingScreen from '../setting/SettingViewContainer';
-import AvailableInFullVersion from '../availableInFullVersion/AvailableInFullVersionViewContainer';
+import WalletScreen from '../wallet/walletManageViewContainer';
 
 import { colors, fonts } from '../../styles';
-
-const headerBackground = require('../../../assets/images/topBarBg.png');
 
 const stackNavigator = createStackNavigator(
   {
@@ -18,7 +16,9 @@ const stackNavigator = createStackNavigator(
         title: 'RevPay',
         headerRight: (
           <TouchableOpacity
-            onPress={() => props.navigation.navigate({ routeName: 'Setting' })}
+            onPress={() =>
+              props.navigation.navigate({ routeName: 'SettingScreen' })
+            }
           >
             <Image
               source={require('../../../assets/images/icons/icon_setting.png')}
@@ -32,7 +32,9 @@ const stackNavigator = createStackNavigator(
         ),
         headerLeft: (
           <TouchableOpacity
-            onPress={() => props.navigation.navigate({ routeName: 'Setting' })}
+            onPress={() =>
+              props.navigation.navigate({ routeName: 'WalletScreen' })
+            }
           >
             <Image
               source={require('../../../assets/images/icons/icon_plus.png')}
@@ -46,10 +48,16 @@ const stackNavigator = createStackNavigator(
         ),
       }),
     },
-    Setting: {
+    SettingScreen: {
       screen: SettingScreen,
       navigationOptions: {
         title: 'Settings',
+      },
+    },
+    WalletScreen: {
+      screen: WalletScreen,
+      navigationOptions: {
+        title: 'Wallet',
       },
     },
   },

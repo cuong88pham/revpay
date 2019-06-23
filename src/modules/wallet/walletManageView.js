@@ -40,7 +40,7 @@ export default function PagesScreen(props) {
       contentContainerStyle={{ paddingBottom: 20 }}
     >
       <View style={styles.componentsSection}>
-        <Text style={styles.componentSectionHeader}>General</Text>
+        <Text style={styles.componentSectionHeader}>Add Wallet</Text>
         <WalletManageItem
           icon={wallet}
           onPress={() => props.navigation.navigate({ routeName: 'Gallery' })}
