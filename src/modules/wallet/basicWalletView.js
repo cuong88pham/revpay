@@ -6,17 +6,35 @@ import {
   TouchableOpacity,
   Image,
   ScrollView,
+  FlatList,
 } from 'react-native';
 
 import { colors, fonts } from '../../styles';
 import {} from '../../components';
 
-const importWallet = require('../../../assets/images/import.png');
-const share = require('../../../assets/images/share.png');
-const joinshare = require('../../../assets/images/joinshare.png');
-const wallet = require('../../../assets/images/wallet.png');
+// const importWallet = require('../../../assets/images/import.png');
+// const share = require('../../../assets/images/share.png');
+// const joinshare = require('../../../assets/images/joinshare.png');
+const wallet = require('../../../assets/images/bitcoin.png');
 
-const WalletManageItem = ({ icon, onPress, title, description }) => (
+// const currencies = [
+//   {
+//     icon: require('../../../assets/images/bitcoin.png'),
+//     name: 'Bitcoin',
+//     symbol: 'BTC',
+//   },
+//   {
+//     icon: require('../../../assets/images/bitcoin.png'),
+//     name: 'Etherium',
+//     symbol: 'ETH',
+//   },
+//   {
+//     icon: require('../../../assets/images/bitcoin.png'),
+//     name: 'Riple',
+//     symbol: 'XRP,
+//   },
+// ];
+const WalletItem = ({ icon, onPress, title, description }) => (
   <TouchableOpacity style={styles.WalletManageItemContainer} onPress={onPress}>
     <View style={styles.WalletManageItemSubContainer}>
       <Image source={icon} style={styles.icon} />
@@ -29,43 +47,23 @@ const WalletManageItem = ({ icon, onPress, title, description }) => (
         </View>
       </View>
     </View>
-    {/* <View style={styles.itemThreeHr} /> */}
   </TouchableOpacity>
 );
 
-export default function PagesScreen(props) {
+export default function basicWalletScreen(props) {
   return (
     <ScrollView
       style={styles.container}
       contentContainerStyle={{ paddingBottom: 20 }}
     >
       <View style={styles.componentsSection}>
-        <Text style={styles.componentSectionHeader}>Add Wallet</Text>
-        <WalletManageItem
+        <Text style={styles.componentSectionHeader}>Select currency</Text>
+
+        <WalletItem
           icon={wallet}
-          onPress={() =>
-            props.navigation.navigate({ routeName: 'basicWalletScreen' })
-          }
+          onPress={() => props.navigation.navigate({ routeName: 'Gallery' })}
           title="Basic Wallet"
           description="Quick and easy setup"
-        />
-        <WalletManageItem
-          icon={share}
-          onPress={() => props.navigation.navigate({ routeName: 'Gallery' })}
-          title="Shared Wallet"
-          description="Requires multiple devices (most secure)"
-        />
-        <WalletManageItem
-          icon={joinshare}
-          onPress={() => props.navigation.navigate({ routeName: 'Gallery' })}
-          title="Join Shared Wallet"
-          description="Requires invitation to join"
-        />
-        <WalletManageItem
-          icon={importWallet}
-          onPress={() => props.navigation.navigate({ routeName: 'Gallery' })}
-          title="Import Wallet"
-          description="Recover your wallet using your passphare"
         />
       </View>
     </ScrollView>
@@ -101,8 +99,8 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
   },
   icon: {
-    height: 50,
-    width: 50,
+    height: 32,
+    width: 32,
   },
   iconContent: {
     flex: 1,
