@@ -27,7 +27,7 @@ const stackNavigator = createStackNavigator(
               source={require('../../../assets/images/icons/icon_setting.png')}
               resizeMode="contain"
               style={{
-                height: 16,
+                height: 20,
                 paddingRight: 30,
               }}
             />
@@ -43,7 +43,7 @@ const stackNavigator = createStackNavigator(
               source={require('../../../assets/images/icons/icon_plus.png')}
               resizeMode="contain"
               style={{
-                height: 16,
+                height: 20,
                 paddingRight: 30,
               }}
             />
@@ -83,6 +83,7 @@ const stackNavigator = createStackNavigator(
     defaultNavigationOptions: () => ({
       titleStyle: {
         fontFamily: fonts.primaryLight,
+        fontSize: 20,
       },
       headerStyle: {
         backgroundColor: colors.primary,
@@ -100,7 +101,7 @@ const stackNavigator = createStackNavigator(
             source={require('../../../assets/images/icons/arrow-back.png')}
             resizeMode="contain"
             style={{
-              height: 16,
+              height: 20,
               paddingLeft: 30,
             }}
           />
