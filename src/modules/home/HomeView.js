@@ -1,13 +1,24 @@
 import React from 'react';
-import { StyleSheet, View, ScrollView, FlatList } from 'react-native';
+import {
+  StyleSheet,
+  View,
+  ScrollView,
+  FlatList,
+  Image,
+  RefreshControl,
+} from 'react-native';
 import Swipeout from 'react-native-swipeout';
 
-import { fonts, colors } from '../../styles';
+import { fonts } from '../../styles';
 import { Text } from '../../components/StyledText';
 import { CardItem, CardInformation, Button } from '../../components';
 
+const iconRecive = require('../../../assets/images/icons/icon_recive.png');
+const iconSend = require('../../../assets/images/icons/icon_send.png');
+
 const wallets = [
   {
+    id: '1',
     icon: require('../../../assets/images/bitcoin.png'),
     isLogo: false,
     title: 'Personal Wallet',
@@ -27,6 +38,13 @@ const wallets = [
 ];
 
 export default class HomeScreen extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      refreshing: false,
+    };
+  }
+
   _openCardDetail = data => {
     this.props.navigation.navigate({
       routeName: 'CardDetail',
@@ -41,7 +59,19 @@ export default class HomeScreen extends React.Component {
     });
   };
 
+  _onRefresh = () => {
+    this.setState({ refreshing: false });
+  };
+
   // this.setState('dataSource', wallets);
+  renderSeparator = () => (
+    <View
+      style={{
+        height: 10,
+        width: '100%',
+      }}
+    />
+  );
 
   render() {
     const dataCardDetail = [
@@ -55,39 +85,43 @@ export default class HomeScreen extends React.Component {
     return (
       <React.Fragment>
         <ScrollView
-          contentContainerStyle={{
-            paddingBottom: 20,
-            backgroundColor: '#f8f7fc',
-          }}
+          style={{ backgroundColor: '#f8f7fc' }}
+          refreshControl={
+            <RefreshControl
+              refreshing={this.state.refreshing}
+              onRefresh={this._onRefresh}
+            />
+          }
         >
           <View style={styles.componentsSection}>
             <Text style={styles.sectionTitle}>Wallets</Text>
 
             <FlatList
               data={wallets}
+              ItemSeparatorComponent={this.renderSeparator}
               renderItem={({ item }) => (
                 <Swipeout
                   right={[
                     {
-                      text: 'Recive',
-                      backgroundColor: 'red',
-                      underlayColor: 'rgba(0, 0, 0, 1, 0.6)',
-                      onPress: () => {
-                        console.log('SWIFE');
-                      },
+                      component: (
+                        <View style={styles.swipeoutRight}>
+                          <Image source={iconRecive} />
+                          <Text style={{ paddingTop: 5 }}>Receive</Text>
+                        </View>
+                      ),
                     },
                   ]}
                   left={[
                     {
-                      text: 'Send',
-                      backgroundColor: 'blue',
-                      underlayColor: 'rgba(0, 0, 0, 1, 0.6)',
-                      onPress: () => {
-                        console.log('SWIFE');
-                      },
+                      component: (
+                        <View style={styles.swipeoutLeft}>
+                          <Image source={iconSend} />
+                          <Text style={{ paddingTop: 5 }}>Send</Text>
+                        </View>
+                      ),
                     },
                   ]}
-                  autoClose="true"
+                  autoClose
                   backgroundColor="transparent"
                 >
                   <CardItem {...item} />
@@ -176,6 +210,25 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'space-around',
+  },
+  swipeoutSide: {
+    backgroundColor: '#f8f7fc',
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 5,
+  },
+  swipeoutRight: {
+    backgroundColor: '#8cf6e0',
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  swipeoutLeft: {
+    backgroundColor: '#83c4fa',
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   section: {
     flex: 1,

@@ -1,18 +1,26 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import LinearGradient from 'react-native-linear-gradient';
-import {
-  StyleSheet,
-  TouchableOpacity,
-  View,
-  Image
-} from 'react-native';
+import { StyleSheet, TouchableOpacity, View, Image } from 'react-native';
 import { Text } from './StyledText';
 
-export default function CardItem({ title, subTitle, value, valueMoney, icon, isLogo, hasTouch, hasBackgroundGradient }) {
+export default function CardItem({
+  title,
+  subTitle,
+  value,
+  valueMoney,
+  icon,
+  isLogo,
+  hasTouch,
+  hasBackgroundGradient,
+}) {
   return (
     <TouchableOpacity style={styles.CardWrapper}>
-      <LinearGradient colors={hasBackgroundGradient ? ['#f5f5f5', '#ccc'] : ['#fff', '#fff']} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }}>
+      <LinearGradient
+        colors={hasBackgroundGradient ? ['#f5f5f5', '#ccc'] : ['#fff', '#fff']}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 0 }}
+      >
         <View style={isLogo ? styles.CardItemGradient : styles.CardItem}>
           <Image source={icon} style={isLogo ? styles.logo : styles.icon} />
           <View style={styles.cardContent}>
@@ -34,14 +42,9 @@ export default function CardItem({ title, subTitle, value, valueMoney, icon, isL
           <View style={styles.cardValueWrapper}>
             {hasTouch && (
               <TouchableOpacity>
-                <Icon
-                  name='angle-right'
-                  size={20}
-                  style={styles.iconRight}
-                />
+                <Icon name="angle-right" size={20} style={styles.iconRight} />
               </TouchableOpacity>
-            )
-            }
+            )}
           </View>
         </View>
       </LinearGradient>
@@ -53,9 +56,7 @@ const styles = StyleSheet.create({
   CardWrapper: {
     backgroundColor: '#f5f5f5',
     borderRadius: 6,
-    marginBottom: 18,
-    overflow: "hidden",
-    
+    overflow: 'hidden',
   },
   CardItem: {
     flexDirection: 'row',
@@ -83,7 +84,7 @@ const styles = StyleSheet.create({
     height: 20,
     padding: 10,
     paddingVertical: 1,
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   cardContent: {
     flex: 1,
@@ -92,7 +93,7 @@ const styles = StyleSheet.create({
   },
   cardTitle: {
     fontSize: 18,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     color: '#272937',
     marginBottom: 8,
   },
@@ -111,12 +112,12 @@ const styles = StyleSheet.create({
   cardMoney: {
     color: '#a4a4a4',
     fontSize: 18,
-    paddingTop: 6
+    paddingTop: 6,
   },
   iconRight: {
     color: '#a4a4a4',
     fontSize: 22,
     paddingLeft: 10,
-    paddingTop: 15
-  }
+    paddingTop: 15,
+  },
 });
